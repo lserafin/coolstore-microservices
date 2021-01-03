@@ -1,4 +1,5 @@
-image: gitpod/workspace-dotnet
+image:
+  file: .gitpod.Dockerfile
 
-# Install custom tools, runtime, etc.
-RUN wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
+tasks:
+  - init: dotnet tool install -g Microsoft.Tye --version "0.5.0-alpha.20555.1"
